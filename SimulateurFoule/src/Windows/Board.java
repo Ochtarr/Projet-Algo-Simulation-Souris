@@ -15,6 +15,13 @@ import elements.Wall;
 import Map.Map;
 
 public class Board extends JPanel{
+	
+	/**
+	 * Default constructor
+	 */
+	public Board(){
+	}
+	
 	public void generateGraphicMap(Graphics g,Map mp){
 		int j = 0, r = 0;
 		  char[][] tmpMap = mp.getMapTab();
