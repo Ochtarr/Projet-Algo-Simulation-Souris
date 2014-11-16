@@ -2,18 +2,16 @@ package Windows;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import Map.Map;
 import elements.Arrival;
 import elements.Door;
 import elements.Grass;
 import elements.Wall;
-import Map.Map;
 
+@SuppressWarnings("serial")
 public class Board extends JPanel{
 	
 	/**

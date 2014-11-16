@@ -1,5 +1,5 @@
 package elements;
 
-public class Mouse extends Element<Object> {
+public class Mouse extends Element {
 
 }

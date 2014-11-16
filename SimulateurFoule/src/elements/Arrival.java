@@ -1,5 +1,6 @@
 package elements;
 
-public class Arrival extends Element<Object> {
+public class Arrival extends Element {
+
 
 }

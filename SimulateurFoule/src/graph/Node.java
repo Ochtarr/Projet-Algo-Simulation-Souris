@@ -28,26 +28,22 @@ public class Node<V> implements INode<V> {
 		this.value = n.value;
 	}
 
-	@Override
 	public V getValue() {
 		// TODO Auto-generated method stub
 		return this.value;
 	}
 
-	@Override
 	public void setValue(V value) {
 		// TODO Auto-generated method stub
 		this.value = value;
 	}
 
-	@Override
 	public boolean equals(Node<V> n) {
 		// TODO Auto-generated method stub
 		super.equals(n);
 		return n==this ? true : false;
 	}
 	
-	@Override
 	public String toString(){
 		String s = "";
 		s+="Value : "+this.value+"/n";

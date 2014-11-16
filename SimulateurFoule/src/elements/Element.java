@@ -1,69 +1,115 @@
 package elements;
 
-import java.awt.Image;
+import interfaces.IItem;
+
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import interfaces.IItem;
+import positionnement.Position;
 
-public abstract class Element<V> implements IItem<V> {
-	/*
-	 * Attributs
+public abstract class Element implements IItem {
+
+	private int MovingCost;
+	private Position position;
+	private BufferedImage icon;
+	private Position[] direction;
+
+	/**
+	 * @return position of current element
 	 */
-	private V position;
-	private V icon;
-	private V[] direction;
-	
-	/*
-	 * Méthodes
+	public Position getPosition() {
+		return this.position;
+	}
+
+	/**
+	 * Set position of current element
+	 * @param position
 	 */
-	public V getPosition() {
-		return (V)position;
+	public void setPosition(Position p) {
+		this.position = p;
 	}
-	public void setPosition(V position) {
-		this.position = position;
+
+	/**
+	 * return icon of current element
+	 */
+	public BufferedImage getIcon() {
+		return this.icon;
 	}
-	public V getIcon() {
-		return icon;
-	}
-	public void setIcon(V nameFile) {
+
+	/**
+	 * Set icon (tile) for current element
+	 * @param nameFile
+	 */
+	public void setIcon(String nameFile) {
 		try {
-			icon =  (V)ImageIO.read(new File((String)nameFile));
+			icon = ImageIO.read(new File((String) nameFile));
 		} catch (IOException e) {
 			e.printStackTrace();
 			icon = null;
 		}
 	}
-	public V getLeftItem() {
-		return null;
+
+	/**
+	 * @return Position of each current node's neighbors
+	 */
+	public Position[] getDirection() {
+		return this.direction;
 	}
-	public V getTopLeftItem() {
-		return null;
-	}
-	public V getRigthItem() {
-		return null;
-	}
-	public V getTopRigthItem() {
-		return null;
-	}
-	public V getTopItem() {
-		return null;
-	}
-	public V getBottomLeftItem() {
-		return null;
-	}
-	public V getBottomRigthItem() {
-		return null;
-	}
-	public V getBottomItem() {
-		return null;
-	}
-	public V[] getDirection() {
-		return (V[])direction;
-	}
-	public void setDirection(V[] direction) {
+
+	/**
+	 * @param direction - Set Position of each current node's neighbors
+	 */
+	public void setDirection(Position[] direction) {
 		this.direction = direction;
 	}
+
+	/**
+	 * @return the movingCost
+	 */
+	public int getMovingCost() {
+		return MovingCost;
+	}
+
+	/**
+	 * @param movingCost the movingCost to set
+	 */
+	public void setMovingCost(int movingCost) {
+		MovingCost = movingCost;
+	}
+
+	public <V> V getLeftItem() {
+		return null;
+	}
+
+	public <V> V getTopLeftItem() {
+		return null;
+	}
+
+	public <V> V getRigthItem() {
+		return null;
+	}
+
+	public <V> V getTopRigthItem() {
+		return null;
+	}
+
+	public <V> V getTopItem() {
+		return null;
+	}
+
+	public <V> V getBottomLeftItem() {
+		return null;
+	}
+
+	public <V> V getBottomRigthItem() {
+		return null;
+	}
+
+	public <V> V getBottomItem() {
+		return null;
+	}
+
 }

@@ -21,7 +21,7 @@ public class Map {
 				char[] lineChar = ligne.toCharArray();	
 				for(int i=0;i<lineChar.length;i++){
 					mapTab[cpLine][cpCol] = lineChar[i];
-					// Vérification ligne de mur
+					// Vï¿½rification ligne de mur
 					if(mapTab[0][cpCol] != '*'){
 						isValid = false;
 						break;
@@ -55,13 +55,13 @@ public class Map {
 		}
 	}
 	/*
-	 * Récupérer la map
+	 * Rï¿½cupï¿½rer la map
 	 */
 	public char[][] getMapTab(){
 		return mapTab;
 	}
 	/*
-	 * Créer une nouvelle Map
+	 * Crï¿½er une nouvelle Map
 	 */
 	public void setMapTab(String file){
 		new Map(file);

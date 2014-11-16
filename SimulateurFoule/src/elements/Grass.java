@@ -1,6 +1,6 @@
 package elements;
 
-public class Grass  extends Element<Object> {
+public class Grass extends Element {
 
 
 }

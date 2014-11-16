@@ -1,5 +1,5 @@
 package elements;
 
-public class Wall extends Element<Object>{
-	
+public class Wall extends Element{
+
 }
