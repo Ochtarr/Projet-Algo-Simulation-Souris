@@ -1,11 +1,10 @@
 import Map.Map;
 public class Start {
 	public static void main(String[] args) {
-		// Windows
-		//String fichier = "src\\ressource\\map.txt";
-		// Linux
-		String fichier = "ressource/map.txt";
+		String fichier = "src\\ressource\\map.txt";
 		Map oMap = new Map(fichier);
-		System.out.println(oMap.lenght);
+		System.out.println(oMap.totalCaractere);
+		System.out.println("Nombre Caractere ligne : "+oMap.getLineNumber());
+		oMap.test();
 	}
 }
