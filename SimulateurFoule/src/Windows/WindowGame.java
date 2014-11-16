@@ -1,5 +1,7 @@
 package Windows;
 
-public class WindowGame {
+import javax.swing.JFrame;
+
+public class WindowGame extends JFrame{
 
 }

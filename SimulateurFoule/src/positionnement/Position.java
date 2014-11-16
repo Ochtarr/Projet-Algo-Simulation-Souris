@@ -1,6 +1,6 @@
 package positionnement;
 
-import positionnement.interfaces.IPosition;
+import interfaces.IPosition;
 
 public class Position implements IPosition{
 	
