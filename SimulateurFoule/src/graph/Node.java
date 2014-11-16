@@ -19,6 +19,7 @@ public class Node<V> implements INode<V> {
 	public Node(V value){
 		this.value = value;
 	}
+	
 	/**
 	 * constructor by copy - Copy all node'parameters to this node- 
 	 * @param Node n
