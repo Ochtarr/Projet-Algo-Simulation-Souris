@@ -1,6 +1,5 @@
 package interfaces;
 
-import positionnement.Position;
 import graph.Node;
 
 public interface INode<V> {
@@ -29,22 +28,6 @@ public interface INode<V> {
 	 * @return String
 	 */
 	public String toString();
-	
-	public V getLeftItem();
-	
-	public V getRightItem();
-	
-	public V getTopItem();
-	
-	public V getBottomItem();
-	
-	public Position getPosition();
-	
-	public void setPosition(Position p);
-	
-	public Position[] getDirection();
-	
-	public void setDirection(Position[] direction);
 
 
 }

@@ -3,30 +3,40 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
+enum Tile {
+	Road,Wall,Grass,Cheese,Door,Mouse
+}
 public class Map {
 	public char[][] mapTab = new char[50][50];
 	private boolean isValid = true;
-	public int lenght = 0;
+	public int totalCaractere = 0;
+	private int lineNumber;
+	public int totalLineNumber = 0;
 	/*
 	 * Constructeur de la map
 	 */
 	public Map(String file){
+		
+		// Declaration Attributs
 		String chaine="";
+		String ligne;
+		int cpLine = 0;
+		int cpCol = 0;
+		System.out.println("Nombre de lignes du fichier = "+getTotalLineNumberFile(file));
 		try{
 			InputStream ips=new FileInputStream(file); 
 			InputStreamReader ipsr=new InputStreamReader(ips);
 			BufferedReader br=new BufferedReader(ipsr);
-			String ligne;
-			int cpLine = 0;
-			int cpCol = 0;
 			while ((ligne=br.readLine())!=null){
 				char[] lineChar = ligne.toCharArray();
 				int len = lineChar.length-1;
+				setLineNumber(len);
 				for(int i=0;i<=len;i++){
 					/*
-					 * Vérification Mur - partie un  
+					 * Verification Mur - partie un  
 					 */
-					if(cpLine ==0 || cpLine == len){
+					if(cpLine ==0 || this.totalLineNumber-1 == cpLine){
 						for(int y =0;y<=len;y++){
 							if(lineChar[y] != '*'){
 								isValid = false;
@@ -34,9 +44,9 @@ public class Map {
 						}
 					}
 					mapTab[cpLine][cpCol] = lineChar[i];
-					this.lenght += 1;
+					this.totalCaractere += 1;
 					/*
-					 * Vérification Mur - partie deux  
+					 * Verification Mur - partie deux  
 					 */
 					if(lineChar[0] != '*' || lineChar[len] != '*'){
 						isValid = false;
@@ -52,7 +62,7 @@ public class Map {
 			if(this.isValid()){
 				System.out.println("Initialisation de la Map - OK");
 			}else{
-				System.out.println("KO - Map non correctement formée");
+				System.out.println("KO - Map non correctement formee");
 			}
 			br.close(); 
 		}		
@@ -62,24 +72,90 @@ public class Map {
 		}
 	}
 	/*
-	 * Récupérer la map
+	 * Recuperer la Map
+	 * return char[][]
 	 */
 	public char[][] getMapTab(){
 		return mapTab;
 	}
 	/*
-	 * Créer une nouvelle Map
+	 * Creer une nouvelle Map
 	 */
 	public void setMapTab(String file){
 		new Map(file);
 	}
+	/*
+	 * Verifie si la carte est bien formee
+	 * return Boolean
+	 */
 	public boolean isValid(){
 		return isValid;
 	}
-	public int getLenght() {
-		return lenght;
+	/*
+	 * Recupere le nombre d'elements dans le tableau
+	 * Return Int
+	 */
+	public int getTotalCaractere() {
+		return totalCaractere;
 	}
-	public void setLenght(int mapLenght) {
-		this.lenght = mapLenght;
+	/*
+	 * Setter de TotalCaractere
+	 */
+	public void setTotalCaractere(int mapLenght) {
+		this.totalCaractere = mapLenght;
+	}
+	/*
+	 * Retourne le nombre de ligne
+	 */
+	public int getLineNumber() {
+		return lineNumber;
+	}
+	public void setLineNumber(int nbCara) {
+		this.lineNumber = nbCara;
+	}
+	public int getTotalLineNumberFile(String file) {
+		this.totalLineNumber = getNumberLine(file);
+		return  getNumberLine(file);
+	}
+	/*
+	 * Setter ligne
+	 */
+	public void setTotalLineNumber(int totalLineNumber) {
+		this.totalLineNumber = totalLineNumber;
+	}
+	/*
+	 * Recupere le nombre de ligne du fichier
+	 * Return Int
+	 */
+	public int getNumberLine(String f){
+		try{
+			InputStream ips=new FileInputStream(f); 
+			InputStreamReader ipsr=new InputStreamReader(ips);
+			BufferedReader br=new BufferedReader(ipsr);
+			
+			String ligne;
+			int nbLine = 0;
+			while ((ligne=br.readLine())!=null){
+				nbLine++;
+			}
+			return nbLine;
+		}catch(Exception e){
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	/*
+	 * A REVOIR
+	 */
+	public void test(){
+		Tile tabMap[][] = new Tile[50][50];
+		 char[][] tabCar = this.getMapTab();
+		 for(int i=0;i<this.getLineNumber();i++){
+			 for(int y=0;y<this.totalLineNumber;y++){
+				 if(tabCar[i][y] == '\n'){
+					 System.out.println("Hello");
+				 }
+			 }
+		 }
 	}
 }

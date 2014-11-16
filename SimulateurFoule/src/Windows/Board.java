@@ -2,51 +2,46 @@ package Windows;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-import Map.Map;
 import elements.Arrival;
 import elements.Door;
 import elements.Grass;
 import elements.Wall;
+import Map.Map;
 
-@SuppressWarnings("serial")
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.JPanel;
+ 
+enum Tile {
+	Road,Wall,Grass,Cheese,Door,Mouse
+}
+ 
 public class Board extends JPanel{
-	
-	/**
-	 * Default constructor
-	 */
-	public Board(){
+	private static final int twidth = 26; // tile width
+	private static final int theight = 26; // tile height
+	private Tile[][] map;
+	public void generateGraphicMap(Map mp){
+		 
 	}
-	
-	public void generateGraphicMap(Graphics g,Map mp){
-		int j = 0, r = 0;
-		  char[][] tmpMap = mp.getMapTab();
-		  for(int y=0;y<mp.lenght;y++){
-		      for(int i = 0; i < mp.lenght; i++){
-		          if(tmpMap[y][i] == '*') {
-		        	  Wall wl = new Wall();
-		              g.drawImage((Image)wl.getIcon(), j*21, r*21, this);
-		              System.out.println("MUR : i, " + i + " j, " + j + " r, " + r);
-		          }else if(tmpMap[y][i] == 'A'){
-		        	  Arrival al = new Arrival();
-		              g.drawImage((Image)al.getIcon(), j*21, r*21, this);
-		              System.out.println("FROMAGE : i, " + i + " j, " + j + " r, " + r);
-		          }else if(tmpMap[y][i] == 'D'){
-		        	  Door dr = new Door();
-		              g.drawImage((Image)dr.getIcon(), j*21, r*21, this);
-		              System.out.println("PORTE : i, " + i + " j, " + j + " r, " + r);
-		          }else if(tmpMap[y][i] == 'G'){
-		        	  Grass gs = new Grass();
-		              g.drawImage((Image)gs.getIcon(), j*21, r*21, this);
-		              System.out.println("HERBE : i, " + i + " j, " + j + " r, " + r);
-		          }else{
-		        	  
-		          }
-		          r++;
-		          j++;
-			}
-		  } 
+	public void initializeTileMap(Map mp){
+		 Tile tabMap[][] = new Tile[50][50];
+		 char[][] tabCar = mp.getMapTab();
+		 for(int y=0;y<mp.totalLineNumber+1;y++){
+			 for(int i=0;i<mp.getLineNumber();i++){
+				 if(tabCar[i][y] == '\n'){
+					 System.out.println("Hello");
+				 }
+			 }
+		 }
+		//return tabMap;
 	}
 }
