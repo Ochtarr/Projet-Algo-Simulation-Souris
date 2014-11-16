@@ -1,10 +1,13 @@
 package graph;
 
+import positionnement.Position;
 import interfaces.INode;
 
 public class Node<V> implements INode<V> {
 	
 	private V value;
+	private Position[] listPositionNeighbors;
+	private Position position;
 	
 	/**
 	 * default constructor
@@ -37,7 +40,36 @@ public class Node<V> implements INode<V> {
 		// TODO Auto-generated method stub
 		this.value = value;
 	}
+	
+	/**
+	 * @return Position of each current node's neighbors
+	 */
+	public Position[] getDirection() {
+		return this.listPositionNeighbors;
+	}
 
+	/**
+	 * @param listPositionNeighbors - Set Position of each current node's neighbors
+	 */
+	public void setDirection(Position[] listPositionNeighbors) {
+		this.listPositionNeighbors = listPositionNeighbors;
+	}
+
+	/**
+	 * @return position of current element
+	 */
+	public Position getPosition() {
+		return this.position;
+	}
+
+	/**
+	 * Set position of current element
+	 * @param position
+	 */
+	public void setPosition(Position p) {
+		this.position = p;
+	}
+	
 	public boolean equals(Node<V> n) {
 		// TODO Auto-generated method stub
 		super.equals(n);
@@ -48,5 +80,29 @@ public class Node<V> implements INode<V> {
 		String s = "";
 		s+="Value : "+this.value+"/n";
 		return s;
+	}
+
+	
+	public V getLeftItem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+	public V getRightItem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+	public V getTopItem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+
+	public V getBottomItem() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
