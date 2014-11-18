@@ -70,20 +70,7 @@ public class Node<V> implements INode<V> {
 		this.position = p;
 	}
 	
-	public boolean equals(Node<V> n) {
-		// TODO Auto-generated method stub
-		super.equals(n);
-		return n==this ? true : false;
-	}
-	
-	public String toString(){
-		String s = "";
-		s+="Value : "+this.value+"/n";
-		return s;
-	}
-
-	
-	public V getLeftItem() {
+	public boolean equa	public V getLeftItem() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -104,5 +91,36 @@ public class Node<V> implements INode<V> {
 	public V getBottomItem() {
 		// TODO Auto-generated method stub
 		return null;
+	}ls(Node<V> n) {
+		// TODO Auto-generated method stub
+		super.equals(n);
+		return n==this ? true : false;
 	}
+	
+	public String toString(){
+		String s = "";
+		s+="Value : "+this.value+"/n";
+		return s;
+	}
+
+	public Position getLeftPosition() {
+		// TODO Auto-generated method stub
+		return new Position();
+	}
+
+	public Position getRightPosition() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Position getTopPosition() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Position getBottomPosition() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

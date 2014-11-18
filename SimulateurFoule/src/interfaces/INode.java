@@ -30,13 +30,13 @@ public interface INode<V> {
 	 */
 	public String toString();
 	
-	public V getLeftItem();
+	public Position getLeftPosition();
 	
-	public V getRightItem();
+	public Position getRightPosition();
 	
-	public V getTopItem();
+	public Position getTopPosition();
 	
-	public V getBottomItem();
+	public Position getBottomPosition();
 	
 	public Position getPosition();
 	

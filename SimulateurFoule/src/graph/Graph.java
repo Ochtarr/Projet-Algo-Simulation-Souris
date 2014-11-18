@@ -32,4 +32,25 @@ public class Graph implements IGraph {
 		return this.listEdges;
 	}
 
+	public void addNode(Node<?> n) {
+		// TODO Auto-generated method stub
+		this.listNodes.add(n);
+	}
+
+	public void addEdge(Node<?> n1, Node<?> n2) {
+		// TODO Auto-generated method stub
+		this.listEdges.add(new Edge(n1,n2));
+	}
+
+	public int getNumberOfNodes() {
+		// TODO Auto-generated method stub
+		return this.listNodes.size();
+	}
+
+	public int getNumberOfEdges() {
+		// TODO Auto-generated method stub
+		return this.listEdges.size();
+	}
+	
+
 }

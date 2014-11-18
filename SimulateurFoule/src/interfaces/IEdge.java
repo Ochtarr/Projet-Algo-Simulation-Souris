@@ -12,5 +12,8 @@ public interface IEdge {
 	
 	public Node<?> getDestination();
 	
-
+	public int getPoids();
+	
+	public void setPoids(int poids);
+	
 }
