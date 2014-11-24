@@ -11,8 +11,8 @@ public class Map {
 	public char[][] mapTab = new char[50][50];
 	private boolean isValid = true;
 	public int totalCaractere = 0;
-	private int lineNumber;
-	public int totalLineNumber = 0;
+	private int nbColonne;
+	public int nbLigne = 0;
 	/*
 	 * Constructeur de la map
 	 */
@@ -23,7 +23,6 @@ public class Map {
 		String ligne;
 		int cpLine = 0;
 		int cpCol = 0;
-		System.out.println("Nombre de lignes du fichier = "+getTotalLineNumberFile(file));
 		try{
 			InputStream ips=new FileInputStream(file); 
 			InputStreamReader ipsr=new InputStreamReader(ips);
@@ -31,12 +30,12 @@ public class Map {
 			while ((ligne=br.readLine())!=null){
 				char[] lineChar = ligne.toCharArray();
 				int len = lineChar.length-1;
-				setLineNumber(len);
+				setNbColonne(len);
 				for(int i=0;i<=len;i++){
 					/*
 					 * Verification Mur - partie un  
 					 */
-					if(cpLine ==0 || this.totalLineNumber-1 == cpLine){
+					if(cpLine ==0 || this.nbLigne-1 == cpLine){
 						for(int y =0;y<=len;y++){
 							if(lineChar[y] != '*'){
 								isValid = false;
@@ -107,21 +106,21 @@ public class Map {
 	/*
 	 * Retourne le nombre de ligne
 	 */
-	public int getLineNumber() {
-		return lineNumber;
+	public int getNbColonne() {
+		return nbColonne;
 	}
-	public void setLineNumber(int nbCara) {
-		this.lineNumber = nbCara;
+	public void setNbColonne(int nbCara) {
+		this.nbColonne = nbCara;
 	}
-	public int getTotalLineNumberFile(String file) {
-		this.totalLineNumber = getNumberLine(file);
+	public int getNbLigne(String file) {
+		this.nbLigne = getNumberLine(file);
 		return  getNumberLine(file);
 	}
 	/*
 	 * Setter ligne
 	 */
-	public void setTotalLineNumber(int totalLineNumber) {
-		this.totalLineNumber = totalLineNumber;
+	public void setTotalLineNumber(int nbColonne) {
+		this.nbColonne = nbColonne;
 	}
 	/*
 	 * Recupere le nombre de ligne du fichier
@@ -143,19 +142,5 @@ public class Map {
 			e.printStackTrace();
 			return 0;
 		}
-	}
-	/*
-	 * A REVOIR
-	 */
-	public void test(){
-		Tile tabMap[][] = new Tile[50][50];
-		 char[][] tabCar = this.getMapTab();
-		 for(int i=0;i<this.getLineNumber();i++){
-			 for(int y=0;y<this.totalLineNumber;y++){
-				 if(tabCar[i][y] == '\n'){
-					 System.out.println("Hello");
-				 }
-			 }
-		 }
 	}
 }
