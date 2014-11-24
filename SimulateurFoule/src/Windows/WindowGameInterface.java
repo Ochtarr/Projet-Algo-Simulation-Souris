@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GraphicsConfiguration;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -22,9 +23,14 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-public class WindowGameInterface extends JFrame {
+import Map.Map;
 
-	private static final long serialVersionUID = 1L;
+public class WindowGameInterface extends JFrame {
+	
+	// Appel du fichier Texte
+	private static String fichier = "src\\ressource\\map.txt";
+	// Création d'un objet Map avec le fichier en paramètre
+	public static Map oMap = new Map(fichier);
 	private JPanel contentPane;
 	private JTextField textField_Porte1;
 	private JTextField textField_Porte2;
@@ -35,7 +41,7 @@ public class WindowGameInterface extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					WindowGameInterface frame = new WindowGameInterface();
+					WindowGameInterface frame = new WindowGameInterface(oMap);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,7 +50,7 @@ public class WindowGameInterface extends JFrame {
 		});
 	}
 
-	public WindowGameInterface() {
+	public WindowGameInterface(Map mp) {
 		setTitle("Mouse Run");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 600);
