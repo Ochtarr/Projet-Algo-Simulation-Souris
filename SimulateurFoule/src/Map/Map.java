@@ -17,7 +17,7 @@ public class Map {
 	 * Constructeur de la map
 	 */
 	public Map(String file){
-		
+		setNbLigne(getNumberLine(file));
 		// Declaration Attributs
 		String chaine="";
 		String ligne;
@@ -87,7 +87,7 @@ public class Map {
 	 * Verifie si la carte est bien formee
 	 * return Boolean
 	 */
-	public boolean isValid(){
+	protected boolean isValid(){
 		return isValid;
 	}
 	/*
@@ -98,13 +98,13 @@ public class Map {
 		return totalCaractere;
 	}
 	/*
-	 * Setter de TotalCaractere
+	 * Renvoi tous les caractères de la map
 	 */
-	public void setTotalCaractere(int mapLenght) {
+	protected void setTotalCaractere(int mapLenght) {
 		this.totalCaractere = mapLenght;
 	}
 	/*
-	 * Retourne le nombre de ligne
+	 * Retourne le nombre de colonnes
 	 */
 	public int getNbColonne() {
 		return nbColonne;
@@ -112,14 +112,16 @@ public class Map {
 	public void setNbColonne(int nbCara) {
 		this.nbColonne = nbCara;
 	}
-	public int getNbLigne(String file) {
-		this.nbLigne = getNumberLine(file);
-		return  getNumberLine(file);
+	public int getNbLigne() {
+		return this.nbLigne;
+	}
+	public void setNbLigne(int nb){
+		this.nbLigne = nb;
 	}
 	/*
-	 * Setter ligne
+	 * Setter Colonnes
 	 */
-	public void setTotalLineNumber(int nbColonne) {
+	protected void setTotalLineNumber(int nbColonne) {
 		this.nbColonne = nbColonne;
 	}
 	/*
