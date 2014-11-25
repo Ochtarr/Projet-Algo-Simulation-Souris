@@ -6,9 +6,9 @@ import java.util.ArrayList;
 
 public class Edge implements IEdge {
 	
-	private Node<?> source;
-	private Node<?> destination;
-	private ArrayList<Node<?>> listNodes;
+	private Node source;
+	private Node destination;
+	private ArrayList<Node> listNodes;
 	private int poids;
 
 	/**
@@ -21,9 +21,9 @@ public class Edge implements IEdge {
 	 * Constructor with an array of nodes (size array:2)
 	 * @param listNodes
 	 */
-	public Edge(ArrayList<Node<?>> listNodes) {
+	public Edge(ArrayList<Node> listNodes) {
 		if(listNodes.size() != 2 && listNodes != null){
-			this.listNodes = new ArrayList<Node<?>>(2);
+			this.listNodes = new ArrayList<Node>(2);
 			listNodes.add(listNodes.get(0));
 			listNodes.add(listNodes.get(1));
 			this.source = listNodes.get(0);
@@ -41,13 +41,14 @@ public class Edge implements IEdge {
 	 * @param source
 	 * @param destination
 	 */
-	public Edge(Node<?> source, Node<?> destination){
+	public Edge(Node source, Node destination, int poids){
 		if(source!=null && destination!=null){
 			this.source = source;
 			this.destination = destination;
-			this.listNodes = new ArrayList<Node<?>>(2);
+			this.listNodes = new ArrayList<Node>(2);
 			this.listNodes.add(source);
 			this.listNodes.add(destination);
+			this.poids = poids;
 		}
 	}
 	
@@ -58,22 +59,23 @@ public class Edge implements IEdge {
 	public Edge(Edge e){
 		this.source = e.source;
 		this.destination = e.destination;
-		this.listNodes = new ArrayList<Node<?>>(2);
+		this.listNodes = new ArrayList<Node>(2);
 		this.listNodes.add(e.getNodes().get(0));
 		this.listNodes.add(e.getNodes().get(1));
 	}
 
-	public ArrayList<Node<?>> getNodes() {
+
+	public ArrayList<Node> getNodes() {
 		// TODO Auto-generated method stub
 		return this.listNodes;
 	}
 
-	public Node<?> getSource() {
+	public Node getSource() {
 		// TODO Auto-generated method stub
 		return this.source;
 	}
 
-	public Node<?> getDestination() {
+	public Node getDestination() {
 		// TODO Auto-generated method stub
 		return this.destination;
 	}

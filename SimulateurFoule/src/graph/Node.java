@@ -3,10 +3,9 @@ package graph;
 import positionnement.Position;
 import interfaces.INode;
 
-public class Node<V> implements INode<V> {
+public class Node implements INode {
 	
-	private V value;
-	private Position[] listPositionNeighbors;
+	private String label;
 	private Position position;
 	
 	/**
@@ -19,40 +18,31 @@ public class Node<V> implements INode<V> {
 	 * constructor with value parameter
 	 * @param value
 	 */
-	public Node(V value){
-		this.value = value;
+	public Node(String label){
+		this.label = label;
+	}
+	
+	public Node(String label, Position position){
+		this.label = label;
+		this.position = position;
 	}
 	
 	/**
 	 * constructor by copy - Copy all node'parameters to this node- 
 	 * @param Node n
 	 */
-	public Node(Node<V> n){
-		this.value = n.value;
+	public Node(Node n){
+		this.label = n.label;
 	}
 
-	public V getValue() {
+	public String getLabel() {
 		// TODO Auto-generated method stub
-		return this.value;
+		return this.label;
 	}
 
-	public void setValue(V value) {
+	public void setLabel(String label) {
 		// TODO Auto-generated method stub
-		this.value = value;
-	}
-	
-	/**
-	 * @return Position of each current node's neighbors
-	 */
-	public Position[] getDirection() {
-		return this.listPositionNeighbors;
-	}
-
-	/**
-	 * @param listPositionNeighbors - Set Position of each current node's neighbors
-	 */
-	public void setDirection(Position[] listPositionNeighbors) {
-		this.listPositionNeighbors = listPositionNeighbors;
+		this.label = label;
 	}
 
 	/**
@@ -70,57 +60,14 @@ public class Node<V> implements INode<V> {
 		this.position = p;
 	}
 	
-	public boolean equa	public V getLeftItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-
-	public V getRightItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-
-	public V getTopItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-
-	public V getBottomItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}ls(Node<V> n) {
+	public boolean equals(Node n) {
 		// TODO Auto-generated method stub
 		super.equals(n);
 		return n==this ? true : false;
 	}
 	
 	public String toString(){
-		String s = "";
-		s+="Value : "+this.value+"/n";
-		return s;
-	}
-
-	public Position getLeftPosition() {
-		// TODO Auto-generated method stub
-		return new Position();
-	}
-
-	public Position getRightPosition() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Position getTopPosition() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Position getBottomPosition() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.label;
 	}
 
 }

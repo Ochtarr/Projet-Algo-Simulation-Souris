@@ -3,26 +3,25 @@ package interfaces;
 import positionnement.Position;
 import graph.Node;
 
-public interface INode<V> {
+public interface INode {
 	
 	/**
-	 * retourne le poids du noeud
-	 * @return node's value
+	 * @return node's label
 	 */
-	public V getValue();
+	public String getLabel();
 	
 	/**
-	 * set value's node
-	 * @param value
+	 * set label's node
+	 * @param label
 	 */
-	public void setValue(V value);
+	public void setLabel(String label);
 	
 	/**
 	 * equals method extended from Object. Compare two references
 	 * @param Node n
 	 * @return boolean
 	 */
-	public boolean equals(Node<V> n);
+	public boolean equals(Node n);
 	
 	/**
 	 * toString method extended from Object. Return a string base of this object 
@@ -30,21 +29,8 @@ public interface INode<V> {
 	 */
 	public String toString();
 	
-	public Position getLeftPosition();
-	
-	public Position getRightPosition();
-	
-	public Position getTopPosition();
-	
-	public Position getBottomPosition();
-	
 	public Position getPosition();
 	
 	public void setPosition(Position p);
 	
-	public Position[] getDirection();
-	
-	public void setDirection(Position[] direction);
-
-
 }

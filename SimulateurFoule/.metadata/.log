@@ -1,0 +1,210 @@
+!SESSION 2014-11-24 18:12:35.882 -----------------------------------------------
+eclipse.buildId=I20120502-2000
+java.version=1.6.0_32
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-11-24 18:14:12.382
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.382
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.382
+!MESSAGE Software being installed: Eclipse Java Development Tools 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83 (org.eclipse.jdt.feature.group 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.382
+!MESSAGE Software currently installed: Eclipse Platform 3.7.0.I20120502-2000 (org.eclipse.platform.ide 3.7.0.I20120502-2000)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.382
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.382
+!MESSAGE Refactoring UI 3.7.0.v20120523-1543 (org.eclipse.ltk.ui.refactoring 3.7.0.v20120523-1543)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.382
+!MESSAGE Refactoring UI 3.7.0.dist (org.eclipse.ltk.ui.refactoring 3.7.0.dist)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.382
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE From: Eclipse Java Development Tools 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83 (org.eclipse.jdt.feature.group 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE To: org.eclipse.platform.feature.group 3.8.1
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.383
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE From: Eclipse Platform 3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH (org.eclipse.platform.feature.group 3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.dist]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.383
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE From: Eclipse Platform 4.2.0.v20120608-135145-9JF7BHV8FyMteji0Oi_ePMz0xuZ8TVo7lV0z0ecb (org.eclipse.platform.feature.group 4.2.0.v20120608-135145-9JF7BHV8FyMteji0Oi_ePMz0xuZ8TVo7lV0z0ecb)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.383
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE From: Eclipse Platform 4.2.1.v20120814-120134-9JF7BHVGFyMveli1uX6aTH0q-eAap6PAgOP5mO (org.eclipse.platform.feature.group 4.2.1.v20120814-120134-9JF7BHVGFyMveli1uX6aTH0q-eAap6PAgOP5mO)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.383
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE From: Eclipse Platform 4.2.1.v20130118-173121-9MF7GHYdG0B5kx4E_SkfZV-1mNjVATf67ZAb7 (org.eclipse.platform.feature.group 4.2.1.v20130118-173121-9MF7GHYdG0B5kx4E_SkfZV-1mNjVATf67ZAb7)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.383
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE From: Eclipse Platform 3.7.0.I20120502-2000 (org.eclipse.platform.ide 3.7.0.I20120502-2000)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.383
+!MESSAGE To: org.eclipse.platform.feature.group [3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-11-24 18:14:12.432
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.432
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.432
+!MESSAGE Software being installed: Eclipse Java Development Tools 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83 (org.eclipse.jdt.feature.group 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE Software currently installed: Eclipse Platform 3.7.0.I20120502-2000 (org.eclipse.platform.ide 3.7.0.I20120502-2000)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.433
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE Refactoring UI 3.7.0.v20120523-1543 (org.eclipse.ltk.ui.refactoring 3.7.0.v20120523-1543)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE Refactoring UI 3.7.0.dist (org.eclipse.ltk.ui.refactoring 3.7.0.dist)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.433
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE From: Eclipse Java Development Tools 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83 (org.eclipse.jdt.feature.group 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE To: org.eclipse.platform.feature.group 3.8.1
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.433
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE From: Eclipse Platform 3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH (org.eclipse.platform.feature.group 3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.dist]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.433
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE From: Eclipse Platform 4.2.0.v20120608-135145-9JF7BHV8FyMteji0Oi_ePMz0xuZ8TVo7lV0z0ecb (org.eclipse.platform.feature.group 4.2.0.v20120608-135145-9JF7BHV8FyMteji0Oi_ePMz0xuZ8TVo7lV0z0ecb)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.433
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE From: Eclipse Platform 4.2.1.v20120814-120134-9JF7BHVGFyMveli1uX6aTH0q-eAap6PAgOP5mO (org.eclipse.platform.feature.group 4.2.1.v20120814-120134-9JF7BHVGFyMveli1uX6aTH0q-eAap6PAgOP5mO)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.433
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE From: Eclipse Platform 4.2.1.v20130118-173121-9MF7GHYdG0B5kx4E_SkfZV-1mNjVATf67ZAb7 (org.eclipse.platform.feature.group 4.2.1.v20130118-173121-9MF7GHYdG0B5kx4E_SkfZV-1mNjVATf67ZAb7)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.433
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE From: Eclipse Platform 3.7.0.I20120502-2000 (org.eclipse.platform.ide 3.7.0.I20120502-2000)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.433
+!MESSAGE To: org.eclipse.platform.feature.group [3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-11-24 18:14:12.896
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.896
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.896
+!MESSAGE Software being installed: Eclipse Java Development Tools 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83 (org.eclipse.jdt.feature.group 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.896
+!MESSAGE Software currently installed: Eclipse Platform 3.7.0.I20120502-2000 (org.eclipse.platform.ide 3.7.0.I20120502-2000)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.896
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.896
+!MESSAGE Refactoring UI 3.7.0.v20120523-1543 (org.eclipse.ltk.ui.refactoring 3.7.0.v20120523-1543)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.896
+!MESSAGE Refactoring UI 3.7.0.dist (org.eclipse.ltk.ui.refactoring 3.7.0.dist)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.896
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.897
+!MESSAGE From: Eclipse Java Development Tools 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83 (org.eclipse.jdt.feature.group 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.897
+!MESSAGE To: org.eclipse.platform.feature.group 3.8.1
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.897
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.897
+!MESSAGE From: Eclipse Platform 3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH (org.eclipse.platform.feature.group 3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.897
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.dist]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.897
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.897
+!MESSAGE From: Eclipse Platform 4.2.0.v20120608-135145-9JF7BHV8FyMteji0Oi_ePMz0xuZ8TVo7lV0z0ecb (org.eclipse.platform.feature.group 4.2.0.v20120608-135145-9JF7BHV8FyMteji0Oi_ePMz0xuZ8TVo7lV0z0ecb)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.897
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.897
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.897
+!MESSAGE From: Eclipse Platform 4.2.1.v20120814-120134-9JF7BHVGFyMveli1uX6aTH0q-eAap6PAgOP5mO (org.eclipse.platform.feature.group 4.2.1.v20120814-120134-9JF7BHVGFyMveli1uX6aTH0q-eAap6PAgOP5mO)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.897
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.898
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.898
+!MESSAGE From: Eclipse Platform 4.2.1.v20130118-173121-9MF7GHYdG0B5kx4E_SkfZV-1mNjVATf67ZAb7 (org.eclipse.platform.feature.group 4.2.1.v20130118-173121-9MF7GHYdG0B5kx4E_SkfZV-1mNjVATf67ZAb7)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.898
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.898
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.898
+!MESSAGE From: Eclipse Platform 3.7.0.I20120502-2000 (org.eclipse.platform.ide 3.7.0.I20120502-2000)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.898
+!MESSAGE To: org.eclipse.platform.feature.group [3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2014-11-24 18:14:12.899
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.899
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.900
+!MESSAGE Software being installed: Eclipse Java Development Tools 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83 (org.eclipse.jdt.feature.group 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.900
+!MESSAGE Software currently installed: Eclipse Platform 3.7.0.I20120502-2000 (org.eclipse.platform.ide 3.7.0.I20120502-2000)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.900
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.901
+!MESSAGE Refactoring UI 3.7.0.v20120523-1543 (org.eclipse.ltk.ui.refactoring 3.7.0.v20120523-1543)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.901
+!MESSAGE Refactoring UI 3.7.0.dist (org.eclipse.ltk.ui.refactoring 3.7.0.dist)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.901
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.901
+!MESSAGE From: Eclipse Java Development Tools 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83 (org.eclipse.jdt.feature.group 3.8.2.v20130116-090414-8-8nFu3FNOfwKLRuqgXKIy9z0I83)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.901
+!MESSAGE To: org.eclipse.platform.feature.group 3.8.1
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.901
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.901
+!MESSAGE From: Eclipse Platform 3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH (org.eclipse.platform.feature.group 3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.901
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.dist]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.901
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.901
+!MESSAGE From: Eclipse Platform 4.2.0.v20120608-135145-9JF7BHV8FyMteji0Oi_ePMz0xuZ8TVo7lV0z0ecb (org.eclipse.platform.feature.group 4.2.0.v20120608-135145-9JF7BHV8FyMteji0Oi_ePMz0xuZ8TVo7lV0z0ecb)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.901
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.902
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.902
+!MESSAGE From: Eclipse Platform 4.2.1.v20120814-120134-9JF7BHVGFyMveli1uX6aTH0q-eAap6PAgOP5mO (org.eclipse.platform.feature.group 4.2.1.v20120814-120134-9JF7BHVGFyMveli1uX6aTH0q-eAap6PAgOP5mO)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.902
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.902
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.902
+!MESSAGE From: Eclipse Platform 4.2.1.v20130118-173121-9MF7GHYdG0B5kx4E_SkfZV-1mNjVATf67ZAb7 (org.eclipse.platform.feature.group 4.2.1.v20130118-173121-9MF7GHYdG0B5kx4E_SkfZV-1mNjVATf67ZAb7)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.902
+!MESSAGE To: org.eclipse.ltk.ui.refactoring [3.7.0.v20120523-1543]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2014-11-24 18:14:12.902
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.902
+!MESSAGE From: Eclipse Platform 3.7.0.I20120502-2000 (org.eclipse.platform.ide 3.7.0.I20120502-2000)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2014-11-24 18:14:12.902
+!MESSAGE To: org.eclipse.platform.feature.group [3.8.0.dist-A2F8PIS2G0V65omegoFRjDu2ALt-R2_gtSeiRH]
