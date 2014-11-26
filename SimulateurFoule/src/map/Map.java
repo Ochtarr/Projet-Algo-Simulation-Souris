@@ -1,4 +1,4 @@
-package Map;
+package map;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -98,7 +98,7 @@ public class Map {
 		return totalCaractere;
 	}
 	/*
-	 * Renvoi tous les caractères de la map
+	 * Renvoi tous les caractï¿½res de la map
 	 */
 	protected void setTotalCaractere(int mapLenght) {
 		this.totalCaractere = mapLenght;

@@ -1,6 +1,5 @@
 package stack;
 
-
 import algo.linkedlist.nodes.interfaces.ILinkSimple;
 
 public class LinkSimple<V> implements ILinkSimple<V> {
