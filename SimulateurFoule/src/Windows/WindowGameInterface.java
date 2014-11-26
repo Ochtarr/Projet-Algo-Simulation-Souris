@@ -115,7 +115,7 @@ public class WindowGameInterface extends JFrame {
 				
 				//Label pour afficher l'information sur le tour
 				//Mis à 1 de base pour test, a changer plus tard avec les données dynamiques
-				JLabel label_Info_Tour = new JLabel("1");
+				JLabel label_Info_Tour = new JLabel("0");
 				label_Info_Tour.setFont(new Font("Tahoma", Font.PLAIN, 18));
 				GridBagConstraints gbc_label_Info_Tour = new GridBagConstraints();
 				gbc_label_Info_Tour.insets = new Insets(0, 0, 0, 5);
@@ -134,7 +134,7 @@ public class WindowGameInterface extends JFrame {
 				
 				//Label pour afficher l'information sur le deplacements total
 				//Mis à 30 de base pour test, a changer plus tard avec les données dynamiques
-				JLabel label_Info_Deplacements = new JLabel("30");
+				JLabel label_Info_Deplacements = new JLabel("0");
 				label_Info_Deplacements.setFont(new Font("Tahoma", Font.PLAIN, 18));
 				GridBagConstraints gbc_label_Info_Deplacements = new GridBagConstraints();
 				gbc_label_Info_Deplacements.insets = new Insets(0, 0, 0, 5);
@@ -153,7 +153,7 @@ public class WindowGameInterface extends JFrame {
 				
 				//Label pour afficher l'information sur le nombre de souris en deplacements
 				//Mis à 4 de base pour test, a changer plus tard avec les données dynamiques
-				JLabel label_Info_Souris_En_Deplacement = new JLabel("4");
+				JLabel label_Info_Souris_En_Deplacement = new JLabel("0");
 				label_Info_Souris_En_Deplacement.setFont(new Font("Tahoma", Font.PLAIN, 15));
 				GridBagConstraints gbc_label_Info_Souris_En_Deplacement = new GridBagConstraints();
 				gbc_label_Info_Souris_En_Deplacement.insets = new Insets(0, 0, 0, 5);
@@ -172,7 +172,7 @@ public class WindowGameInterface extends JFrame {
 				
 				//Label pour afficher l'information sur le nombre de souris arrivées
 				//Mis à 2 de base pour test, a changer plus tard avec les données dynamiques
-				JLabel label_Info_Souris_Arrivee = new JLabel("2");
+				JLabel label_Info_Souris_Arrivee = new JLabel("0");
 				label_Info_Souris_Arrivee.setFont(new Font("Tahoma", Font.PLAIN, 15));
 				GridBagConstraints gbc_label_Info_Souris_Arrivee = new GridBagConstraints();
 				gbc_label_Info_Souris_Arrivee.gridx = 10;
@@ -205,7 +205,7 @@ public class WindowGameInterface extends JFrame {
 				//Champ text pour nombre de souris PORTE1
 				textField_Porte1 = new JTextField();
 				//Texte de base pour test avant l'affichage dynamique
-				textField_Porte1.setText("30");
+				textField_Porte1.setText("1");
 				GridBagConstraints gbc_textField_Porte1 = new GridBagConstraints();
 				gbc_textField_Porte1.insets = new Insets(0, 5, 0, 0);
 				gbc_textField_Porte1.weighty = 1.0;
@@ -228,7 +228,7 @@ public class WindowGameInterface extends JFrame {
 				//Champ text pour nombre de souris PORTE2
 				textField_Porte2 = new JTextField();
 				//Texte de base pour test avant l'affichage dynamique
-				textField_Porte2.setText("30");
+				textField_Porte2.setText("1");
 				GridBagConstraints gbc_textField_Porte2 = new GridBagConstraints();
 				gbc_textField_Porte2.weighty = 1.0;
 				gbc_textField_Porte2.weightx = 1.0;
@@ -251,7 +251,7 @@ public class WindowGameInterface extends JFrame {
 				//Champ text pour la vitesse des souris
 				textField_Vitesse = new JTextField();
 				//Texte de base pour test avant l'affichage dynamique
-				textField_Vitesse.setText("500");
+				textField_Vitesse.setText("300");
 				GridBagConstraints gbc_textField_Vitesse = new GridBagConstraints();
 				gbc_textField_Vitesse.weighty = 1.0;
 				gbc_textField_Vitesse.weightx = 1.0;
