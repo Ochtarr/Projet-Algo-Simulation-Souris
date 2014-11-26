@@ -13,7 +13,7 @@ public abstract class Element implements IElement {
 	private int MovingCost;
 	private BufferedImage icon;
 	private int[][] tabAround = new int[7][7];
-	private int[] currPosition = new int[1];
+	private int[] currPosition = {0,0};
 	/* Valeur de Deplacement de la case
 	*  Exemple : 
 	*  Ground ( Terrain normaux ), valeur de deplacement = 1

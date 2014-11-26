@@ -1,17 +1,13 @@
-package navigation;
+package Navigation;
 
 import positionnement.Position;
-import map.Map;
+import Map.Map;
 
 public class Navigation {
 	
 	private Map m;
 	private Position directionProposee;
-	
-	
-	
-	
-	
+
 	/**
 	 * @return the directionProposee
 	 */
