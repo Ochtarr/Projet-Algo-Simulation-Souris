@@ -3,6 +3,7 @@ package Windows;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -23,15 +24,19 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-import Map.Map;
+import map.Map;
+
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
 public class WindowGameInterface extends JFrame {
 	
 	// Appel du fichier Texte
-	private static String fichier = "src\\ressource\\map.txt";
+	private static String fichier = "Projet-Algo-Simulation-Souris\\SimulateurFoule\\src\\ressource\\map.txt";
 	// Création d'un objet Map avec le fichier en paramètre
 	public static Map oMap = new Map(fichier);
 	private JPanel contentPane;
+	public static JPanel panel_plateau = new JPanel();
 	private JTextField textField_Porte1;
 	private JTextField textField_Porte2;
 	private JTextField textField_Vitesse;
@@ -51,6 +56,7 @@ public class WindowGameInterface extends JFrame {
 	}
 
 	public WindowGameInterface(Map mp) {
+		
 		setTitle("Mouse Run");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 600);
@@ -71,10 +77,12 @@ public class WindowGameInterface extends JFrame {
 	    
 	    
 		//Jpanel affichage plateau de jeu
-		JPanel panel_plateau = new JPanel();
 		panel_plateau.setBackground(Color.WHITE);
 		contentPane.add(panel_plateau, BorderLayout.CENTER);
 		
+		// Initialisation de la map avec images
+		Windows.Board.initializeTileMap(mp);
+				
 		//Jpanel pour les informations
 		JPanel panel_infos = new JPanel();
 		panel_infos.setBackground(new Color(222, 184, 135));
@@ -278,7 +286,6 @@ public class WindowGameInterface extends JFrame {
 				gbc_btn_Lancer.gridy = 1;
 				panel_lancer.add(btn_Lancer, gbc_btn_Lancer);
 				btn_Lancer.setPreferredSize(dim);
-			
 	}
 
 }
