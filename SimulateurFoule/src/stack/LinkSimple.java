@@ -7,7 +7,7 @@ public class LinkSimple<V> implements ILinkSimple<V> {
 	private V value;
 	private ILinkSimple<V> next;
 	
-	public LinkSimple( V v){
+	public LinkSimple(V v){
 		this.value = v;
 	}
 	

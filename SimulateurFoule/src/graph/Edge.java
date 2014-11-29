@@ -87,5 +87,11 @@ public class Edge implements IEdge {
 	public void setPoids(int poids) {
 		this.poids = poids;
 	}
+	
+	public String toString(){
+		String s = "";
+		s+= this.getSource() + " -> " + this.getDestination() + " (" + this.getPoids() + ")";
+		return s;
+	}
 
 }

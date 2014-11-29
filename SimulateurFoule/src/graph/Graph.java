@@ -58,5 +58,40 @@ public class Graph implements IGraph {
 		if (edge != null)
 			this.listEdges.add(edge);
 	}
+	
+	public int compterPoidsTotal(Node source, Node destination){
+		int poidsTotal = 0;
+		String villeActuelle = source.getLabel();
+		Node origin = new Node(source);
+		Node fin = new Node(destination);
+		
+		//Affiche le départ
+		System.out.println(villeActuelle);
+		
+		if( this.NodeExists(origin) && this.NodeExists(fin)){
+			
+			while(villeActuelle != fin.getLabel()) {
+			
+				for(int i=0 ; i<this.getNumberOfEdges(); i++){
+					if(this.getEdges().get(i).getSource().getLabel() == villeActuelle ) {
+						poidsTotal += this.getEdges().get(i).getPoids();
+						villeActuelle = this.getEdges().get(i).getDestination().getLabel();
+						//Affiche toutes les villes traversées + ville finale
+						System.out.println(villeActuelle);
+					}
+				}
+				
+			}
+		}
+		return poidsTotal;
+	}
+	
+	public boolean NodeExists(Node n1) {
+		for(int i=0; i<this.getNodes().size(); i++){
+			if( n1.getLabel() == this.getNodes().get(i).getLabel() )
+				return true;	
+		}
+		return false;
+	}
 
 }

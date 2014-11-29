@@ -36,6 +36,13 @@ public class StartGraph {
 		g.addEdge( new Edge(listNodes.get(4), listNodes.get(5), 3) ); //Caen - Toulouse vaut 3
 		g.addEdge( new Edge(listNodes.get(5), listNodes.get(1), 3) ); //Toulouse - Marseille vaut 3
 		
+		System.out.println("Number of nodes : " + g.getNumberOfNodes());
+		System.out.println("Number of edges : " + g.getNumberOfEdges());
+		
+		System.out.println(g.getEdges().get(0).toString());
+		
+		System.out.println(g.compterPoidsTotal(g.getNodes().get(0), g.getNodes().get(1)));
+		
 		
 	}
 

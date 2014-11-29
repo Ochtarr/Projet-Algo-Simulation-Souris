@@ -1,7 +1,7 @@
-package Navigation;
+package navigation;
 
 import positionnement.Position;
-import Map.Map;
+import map.Map;
 
 public class Navigation {
 	
@@ -35,5 +35,7 @@ public class Navigation {
 	public void setM(Map m) {
 		this.m = m;
 	}
+	
+	
 	
 }

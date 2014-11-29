@@ -8,12 +8,11 @@ import algo.stack.interfaces.ILifo;
 
 public class LinkedStack<V> implements ILifo {
 
-	private LinkSimple<Object> list;
+	private LinkSimple<V> list;
 	private MyIterator ite;
 
 	public Iterator iterator() {
 		// TODO Auto-generated method stub
-		list = new LinkSimple<Object>();
 		ite = new MyIterator(list);
 		return (Iterator) ite;
 	}
@@ -55,10 +54,11 @@ public class LinkedStack<V> implements ILifo {
 		// TODO Auto-generated method stub
 		LinkSimple<V> l = new LinkSimple(o);
 		
-
+		/*
 		if (ite.getList().getValue() != null) {
 			ite.getList().setValue(o);
 		}
+		*/
 
 		if (list != null) {
 			while (ite.hasNext()) {
@@ -68,8 +68,7 @@ public class LinkedStack<V> implements ILifo {
 			//ite.getList().setNext((ILinkSimple<?>) l);
 		} else {
 			System.out.println("test");
-			list = new LinkSimple<Object>();
-			list.setValue(o);
+			list = new LinkSimple(o);
 			ite.setIndex(ite.getIndex() + 1);
 		}
 	}
