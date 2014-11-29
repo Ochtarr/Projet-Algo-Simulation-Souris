@@ -29,16 +29,11 @@ import map.Map;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
-public class WindowGameInterface extends JFrame {
+public class LinuxWindowGameInterface extends JFrame {
 	
 	// Appel du fichier Texte
-	
-	//Chemin sous Linux
-	private static String fichier = "src/ressource/map.txt";
-	//Chemin sous Windows
-	//private static String fichier = "Projet-Algo-Simulation-Souris\\SimulateurFoule\\src\\ressource\\map.txt";
-	
-	// Création d'un objet Map avec le fichier en paramètre
+	private static String fichier = "Projet-Algo-Simulation-Souris\\SimulateurFoule\\src\\ressource\\map.txt";
+	// Cr�ation d'un objet Map avec le fichier en param�tre
 	public static Map oMap = new Map(fichier);
 	private JPanel contentPane;
 	public static JPanel panel_plateau = new JPanel();
@@ -51,7 +46,7 @@ public class WindowGameInterface extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					WindowGameInterface frame = new WindowGameInterface(oMap);
+					LinuxWindowGameInterface frame = new LinuxWindowGameInterface(oMap);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -60,7 +55,7 @@ public class WindowGameInterface extends JFrame {
 		});
 	}
 
-	public WindowGameInterface(Map mp) {
+	public LinuxWindowGameInterface(Map mp) {
 		
 		setTitle("Mouse Run");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

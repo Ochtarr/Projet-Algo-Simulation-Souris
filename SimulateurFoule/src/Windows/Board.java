@@ -27,7 +27,7 @@ public class Board extends JPanel {
 		GridBagConstraints gbc = new GridBagConstraints();	
 		maCarte.setLayout(gridMap);
 	
-		// Test des valeurs récupéré
+		// Test des valeurs rï¿½cupï¿½rï¿½
 		System.out.println(tabCar[0][1]);
 		System.out.println(mp.getNbColonne()+1);
 		System.out.println (mp.getNbLigne());
@@ -46,7 +46,7 @@ public class Board extends JPanel {
 					gbc.weighty = 1;
 							
 					JLabel lblNewLabel = new JLabel();
-					lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.mur));
+					lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.mur));
 					gridMap.setConstraints(maCarte, gbc);
 					maCarte.add(lblNewLabel, gbc);
 					
@@ -62,7 +62,7 @@ public class Board extends JPanel {
 					gbc.weighty = 1;
 					
 					JLabel lblNewLabel = new JLabel();
-					lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.route));
+					lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.route));
 					gridMap.setConstraints(maCarte, gbc);
 					maCarte.add(lblNewLabel, gbc);
 					
@@ -78,7 +78,7 @@ public class Board extends JPanel {
 					gbc.weighty = 1;
 					
 					JLabel lblNewLabel = new JLabel();
-					lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.herbe));
+					lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.herbe));
 					gridMap.setConstraints(maCarte, gbc);
 					maCarte.add(lblNewLabel, gbc);
 					
@@ -94,7 +94,7 @@ public class Board extends JPanel {
 					gbc.weighty = 1;
 					
 					JLabel lblNewLabel = new JLabel();
-					lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.porte));
+					lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.porte));
 					gridMap.setConstraints(maCarte, gbc);
 					maCarte.add(lblNewLabel, gbc);
 					
@@ -110,7 +110,7 @@ public class Board extends JPanel {
 					gbc.weighty = 1;
 					
 					JLabel lblNewLabel = new JLabel();
-					lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.fromage));
+					lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.fromage));
 					gridMap.setConstraints(maCarte, gbc);
 					maCarte.add(lblNewLabel, gbc);
 					
