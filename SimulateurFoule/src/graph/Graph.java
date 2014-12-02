@@ -1,8 +1,8 @@
 package graph;
 
-import java.util.ArrayList;
-
 import interfaces.IGraph;
+
+import java.util.ArrayList;
 
 public class Graph implements IGraph {
 	

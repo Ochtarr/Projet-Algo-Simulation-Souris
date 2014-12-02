@@ -10,7 +10,7 @@ public class Position implements IPosition{
 	public Position(int x, int y) {
 		// TODO Auto-generated constructor stub
 		this.x = x;
-		this.y = x;
+		this.y = y;
 	}
 
 	public int getX() {
@@ -31,6 +31,10 @@ public class Position implements IPosition{
 	public void setY(int y) {
 		// TODO Auto-generated method stub
 		this.y = y;
+	}
+	
+	public String toString(){
+		return "x:"+ this.getX() + "/y:" + this.getY();
 	}
 
 }

@@ -1,7 +1,7 @@
 package graph;
 
-import positionnement.Position;
 import interfaces.INode;
+import positionnement.Position;
 
 public class Node implements INode {
 	

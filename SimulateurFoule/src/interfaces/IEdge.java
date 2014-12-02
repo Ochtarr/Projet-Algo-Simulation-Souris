@@ -1,8 +1,8 @@
 package interfaces;
 
-import java.util.ArrayList;
-
 import graph.Node;
+
+import java.util.ArrayList;
 
 public interface IEdge {
 	

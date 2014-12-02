@@ -1,7 +1,7 @@
 package interfaces;
 
-import positionnement.Position;
 import graph.Node;
+import positionnement.Position;
 
 public interface INode {
 	

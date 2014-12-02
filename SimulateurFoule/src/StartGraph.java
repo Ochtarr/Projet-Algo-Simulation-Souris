@@ -1,10 +1,8 @@
-import java.util.ArrayList;
-
-import positionnement.Position;
-
 import graph.Edge;
 import graph.Graph;
 import graph.Node;
+
+import java.util.ArrayList;
 
 /**
  * classe temporaire
