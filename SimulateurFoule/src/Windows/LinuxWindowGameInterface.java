@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import map.Map;
+import Map.Map;
 
 public class LinuxWindowGameInterface extends JFrame {
 	

@@ -2,6 +2,6 @@ package elements;
 
 public class Cheese extends Element {
 	public Cheese(){
-		this.setNbDeplacement(1);
+		this.setMovingCost(1);
 	}
 }

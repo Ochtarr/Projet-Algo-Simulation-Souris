@@ -12,7 +12,7 @@ public abstract class Element implements IElement {
 
 	private int MovingCost;
 	private BufferedImage icon;
-	private int[][] tabAround = new int[7][7];
+	private int[][] tabAround = new int[8][8];
 	private int[] currPosition = {0,0};
 	/* Valeur de Deplacement de la case
 	*  Exemple : 
@@ -21,7 +21,6 @@ public abstract class Element implements IElement {
 	*  Cheese ( Objectif de la souris ), valeur de deplacement = 1
 	*  etc...
 	*/
-	private int nbDeplacement;
 	/**
 	 * return icon of current element
 	 */
@@ -70,14 +69,6 @@ public abstract class Element implements IElement {
 
 	public void setCurrPosition(int[] currPosition) {
 		this.currPosition = currPosition;
-	}
-
-	public int getNbDeplacement() {
-		return nbDeplacement;
-	}
-
-	public void setNbDeplacement(int nbDeplacement) {
-		this.nbDeplacement = nbDeplacement;
 	}
 
 }

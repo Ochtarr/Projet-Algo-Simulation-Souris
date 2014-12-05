@@ -1,6 +1,6 @@
-package navigation;
+package Navigation;
 
-import map.Map;
+import Map.Map;
 import positionnement.Position;
 
 public class Navigation {

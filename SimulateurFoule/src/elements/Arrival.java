@@ -1,14 +1,16 @@
 package elements;
 
+import java.util.ArrayList;
+
 
 public class Arrival extends Element {
 	// ATTRIBUTE PRIVATE
 	private boolean[] tabPossibility = new boolean[7];
-	private Mouse[] listMouse = new Mouse[7];
+	private ArrayList<Mouse> listMouse = new ArrayList<Mouse>();
 			
 	//  CONSTRUCTOR
 	public Arrival(){
-		this.setNbDeplacement(0);
+		this.setMovingCost(0);
 		initializeTabPos();
 	}
 	// Reinitialise le tableau de boolean de disponibilite
@@ -51,7 +53,7 @@ public class Arrival extends Element {
 			tmpPos[1] = this.getCurrPosition()[1]-1; //       Y position
 			mo.setCurrPosition(tmpPos);
 			this.tabPossibility[0] = false;
-			listMouse[0] = mo;
+			listMouse.toArray()[0] = mo;
 			break;
 		case 1: 
 			// CAS DU HAUT
@@ -59,7 +61,7 @@ public class Arrival extends Element {
 			tmpPos[1] = this.getCurrPosition()[1]-1; //       Y position
 			mo.setCurrPosition(tmpPos);
 			this.tabPossibility[1] = false;
-			listMouse[1] = mo;
+			listMouse.toArray()[1] = mo;
 			 break;
 		case 2: 
 			// CAS DU HAUT DROIT
@@ -67,7 +69,7 @@ public class Arrival extends Element {
 			tmpPos[1] = this.getCurrPosition()[1]-1; //       Y position
 			mo.setCurrPosition(tmpPos);
 			this.tabPossibility[2] = false;
-			listMouse[2] = mo;
+			listMouse.toArray()[2] = mo;
 			 break;
 		case 3: 
 			// CAS DU DROIT
@@ -75,7 +77,7 @@ public class Arrival extends Element {
 			tmpPos[1] = this.getCurrPosition()[1]+0; //       Y position
 			mo.setCurrPosition(tmpPos);
 			this.tabPossibility[3] = false;
-			listMouse[3] = mo;
+			listMouse.toArray()[3] = mo;
 			break;
 		case 4: 
 			// CAS DU BAS DROIT
@@ -83,7 +85,7 @@ public class Arrival extends Element {
 			tmpPos[1] = this.getCurrPosition()[1]+1; //       Y position
 			mo.setCurrPosition(tmpPos);
 			this.tabPossibility[4] = false;
-			listMouse[4] = mo;
+			listMouse.toArray()[4] = mo;
 			break;
 		case 5: 
 			// CAS DU BAS
@@ -91,7 +93,7 @@ public class Arrival extends Element {
 			tmpPos[1] = this.getCurrPosition()[1]+1; //       Y position
 			mo.setCurrPosition(tmpPos);
 			this.tabPossibility[5] = false;
-			listMouse[5] = mo;
+			listMouse.toArray()[5] = mo;
 			break;
 		case 6: 
 			// CAS DU BAS GAUCHE
@@ -99,7 +101,7 @@ public class Arrival extends Element {
 			tmpPos[1] = this.getCurrPosition()[1]+1; //       Y position
 			mo.setCurrPosition(tmpPos);
 			this.tabPossibility[6] = false;
-			listMouse[6] = mo;
+			listMouse.toArray()[6] = mo;
 			 break;
 		case 7: 
 			// CAS GAUCHE
@@ -107,7 +109,7 @@ public class Arrival extends Element {
 			tmpPos[1] = this.getCurrPosition()[1]+0; //       Y position
 			mo.setCurrPosition(tmpPos);
 			this.tabPossibility[7] = false;
-			listMouse[7] = mo;
+			listMouse.toArray()[7] = mo;
 			break;
 		default: System.out.println("Error placeMouse"); break;
 		}
@@ -117,16 +119,18 @@ public class Arrival extends Element {
 			System.out.println("Il n'y a plus de place");
 			return -1;
 		}else{
+			this.listMouse.add(mo);
 			// Envoi de l'objet souris a la position libre
 			placeMouse(mo,getPositionAccept(this.tabPossibility));
+			System.out.println("Souris Ajoutee");
 			return 1;
 		}
 		
 	}
-	public Mouse[] getListMouse() {
+	public ArrayList<Mouse> getListMouse() {
 		return listMouse;
 	}
-	public void setListMouse(Mouse[] listMouse) {
+	public void setListMouse(ArrayList<Mouse> listMouse) {
 		this.listMouse = listMouse;
 	}
 }

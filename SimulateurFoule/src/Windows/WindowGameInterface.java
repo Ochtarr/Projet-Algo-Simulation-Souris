@@ -3,7 +3,6 @@ package Windows;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -11,6 +10,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,25 +18,32 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import map.Map;
+import elements.Mouse;
+import elements.Arrival;
+import elements.Element;
+import Map.Map;
 
-public class WindowGameInterface extends JFrame {
-	
-	// Appel du fichier Texte
-	
-	//Chemin sous Linux
-	private static String fichier = "src/ressource/map.txt";
-	//Chemin sous Windows
-	//private static String fichier = "Projet-Algo-Simulation-Souris\\SimulateurFoule\\src\\ressource\\map.txt";
-	
-	// Création d'un objet Map avec le fichier en paramètre
-	public static Map oMap = new Map(fichier);
-	private JPanel contentPane;
-	public static JPanel panel_plateau = new JPanel();
+public class WindowGameInterface extends JFrame implements ActionListener{
+	/*
+		// Appel du fichier Texte
+		
+		//Chemin sous Linux
+		//private static String fichier = "src/ressource/map.txt";
+		//Chemin sous Windows
+		private static String fichier = "src\\ressource\\map.txt";
+		
+		// Création d'un objet Map avec le fichier en paramètre
+		public static Map oMap = new Map(fichier);
+	*/
+	private JPanel contentPane = new JPanel();
+	public  JPanel panel_plateau = new JPanel();
 	private JTextField textField_Porte1;
 	private JTextField textField_Porte2;
 	private JTextField textField_Vitesse;
-
+	private JButton btn_Lancer = new JButton("LANCER");
+	private Board bd = new Board();
+	private RefreshMap refresh;
+	/*
 	//Main temporaire pour tester la vue
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -49,17 +56,20 @@ public class WindowGameInterface extends JFrame {
 				}
 			}
 		});
+	*/
+	public WindowGameInterface(){
+		
 	}
-
 	public WindowGameInterface(Map mp) {
 		
 		setTitle("Mouse Run");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 600);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
 		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+		contentPane.setBackground(Color.WHITE);
+		
 		
 		//Dimension du bouton Lancer
 	    int width = 150;
@@ -77,11 +87,12 @@ public class WindowGameInterface extends JFrame {
 		contentPane.add(panel_plateau, BorderLayout.CENTER);
 		
 		// Initialisation de la map avec images
-		Windows.Board.initializeTileMap(mp);
+		
+		bd.initializeTileMap(mp);
 				
 		//Jpanel pour les informations
 		JPanel panel_infos = new JPanel();
-		panel_infos.setBackground(new Color(222, 184, 135));
+		panel_infos.setBackground(new Color(255,230,153));
 		contentPane.add(panel_infos, BorderLayout.SOUTH);
 		GridBagLayout gbl_panel_infos = new GridBagLayout();
 		gbl_panel_infos.columnWidths = new int[]{0, 0, 0};
@@ -92,13 +103,14 @@ public class WindowGameInterface extends JFrame {
 		
 			//Jpanel avec affichage des informations/scores
 			JPanel panel_score = new JPanel();
-			panel_score.setBackground(new Color(210, 180, 140));
+			panel_score.setBackground(new Color(255,230,153));
 			GridBagConstraints gbc_panel_score = new GridBagConstraints();
 			gbc_panel_score.ipadx = 1;
 			gbc_panel_score.ipady = 30;
 			gbc_panel_score.fill = GridBagConstraints.BOTH;
 			gbc_panel_score.gridx = 0;
 			gbc_panel_score.gridy = 0;
+			
 			panel_infos.add(panel_score, gbc_panel_score);
 			GridBagLayout gbl_panel_score = new GridBagLayout();
 			gbl_panel_score.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -185,7 +197,7 @@ public class WindowGameInterface extends JFrame {
 			
 			//Jpanel pour l'affichage des informations li� au jeu et au bouton Lancer
 			JPanel panel_lancer = new JPanel();
-			panel_lancer.setBackground(new Color(205, 133, 63));
+			panel_lancer.setBackground(new Color(255,230,153));
 			GridBagConstraints gbc_panel_lancer = new GridBagConstraints();
 			gbc_panel_lancer.fill = GridBagConstraints.BOTH;
 			gbc_panel_lancer.gridx = 1;
@@ -268,20 +280,39 @@ public class WindowGameInterface extends JFrame {
 				textField_Vitesse.setPreferredSize(dim_text);
 				
 				//Bouton Lancer le jeu
-				JButton btn_Lancer = new JButton("LANCER");
+				
 				btn_Lancer.setForeground(new Color(255, 255, 255));
 				btn_Lancer.setBackground(new Color(139, 69, 19));
-				btn_Lancer.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-
-					}
-				});
+				btn_Lancer.addActionListener(this);
 				GridBagConstraints gbc_btn_Lancer = new GridBagConstraints();
 				gbc_btn_Lancer.insets = new Insets(0, 10, 10, 10);
 				gbc_btn_Lancer.gridx = 6;
 				gbc_btn_Lancer.gridy = 1;
 				panel_lancer.add(btn_Lancer, gbc_btn_Lancer);
 				btn_Lancer.setPreferredSize(dim);
+				add(bd.getMaCarte());
+				contentPane.add(bd.getMaCarte());
+				setContentPane(contentPane);
+				
+	}
+
+	public void actionPerformed(ActionEvent event) {
+		if(event.getSource().equals(this.btn_Lancer)){
+			if(!this.textField_Porte1.getText().equals("0") || !this.textField_Porte1.getText().equals("")){
+				int nbSouris = Integer.parseInt(this.textField_Porte1.getText());
+				 Mouse mouse = new Mouse();
+				 for(int y=0;y<bd.getListElement().size();y++){
+					 	Element tmpTab = (Element) bd.getListElement().toArray()[y];
+						 if(tmpTab instanceof Arrival){
+								((Arrival) tmpTab).addMouse(mouse);
+								bd.paintSouris(mouse);
+								bd.getMaCarte().repaint();
+								contentPane.repaint();
+								setContentPane(contentPane);
+						 }
+				 }
+			}
+		}
 	}
 
 }

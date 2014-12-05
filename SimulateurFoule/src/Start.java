@@ -1,6 +1,6 @@
 import java.awt.EventQueue;
 
-import map.Map;
+import Map.Map;
 import Windows.WindowGameInterface;
 
 public class Start {
@@ -8,22 +8,22 @@ public class Start {
 		/**
 		 * TEST FONCTIONNEMENT MAP
 		 */
-		String fichier = "Projet-Algo-Simulation-Souris\\SimulateurFoule\\src\\ressource\\map.txt";
+		String fichier = "src\\ressource\\map.txt";
+		//String fichier = "src/ressource/map.txt";
 		System.out.println("++++ GENERATION MAP CONSOLE ++++");
 		final Map oMap = new Map(fichier);
 		System.out.println("Nombre Colonnes : " + oMap.getNbColonne());
 		System.out.println("Nombre Lignes : " + oMap.getNbLigne());
-
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					WindowGameInterface frame = new WindowGameInterface(oMap);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		java.awt.EventQueue.invokeLater(new Runnable() {  
+	            public void run() {  
+					try {
+						WindowGameInterface frame = new WindowGameInterface(oMap);
+						frame.setVisible(true);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+	            }
+		 });
 
 		// /**
 		// * TEST FONCTIONNEMENT DES ENTREES ET SORTIE DES SOURIS AUTOUR DE LA
