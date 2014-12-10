@@ -115,13 +115,12 @@ public class Board extends JPanel {
 		int y = mo.getCurrPosition()[0];
 		System.out.println("Position X DE LA SOURIS= "+x);
 		System.out.println("Position Y DE LA SOURIS = "+y);
-		gbc.gridx = x;
-		gbc.gridy = y;
+		gbc.gridx = y;
+		gbc.gridy = x;
 		JLabel lblNewLabel = new JLabel();
 		lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.souris));
 		gridMap.setConstraints(maCarte, gbc);
 		maCarte.add(lblNewLabel, gbc);
-		maCarte.repaint();
 		listElement.add(mo);
 	}
 	public JPanel getMaCarte() {
