@@ -58,7 +58,7 @@ public class Board extends JPanel {
 					wa.setCurrPosition(currPos);
 					listElement.add(wa);
 				}
-				if (tabCar[i][y] == ' ') {
+				if (tabCar[i][y] == 'F') {
 					gbc.gridx = y;
 					gbc.gridy = i;
 					JLabel lblNewLabel = new JLabel();
@@ -115,12 +115,13 @@ public class Board extends JPanel {
 		int y = mo.getCurrPosition()[0];
 		System.out.println("Position X DE LA SOURIS= "+x);
 		System.out.println("Position Y DE LA SOURIS = "+y);
-		gbc.gridx = y;
-		gbc.gridy = x;
+		gbc.gridx = x;
+		gbc.gridy = y;
 		JLabel lblNewLabel = new JLabel();
 		lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.souris));
 		gridMap.setConstraints(maCarte, gbc);
 		maCarte.add(lblNewLabel, gbc);
+		
 		listElement.add(mo);
 	}
 	public JPanel getMaCarte() {
