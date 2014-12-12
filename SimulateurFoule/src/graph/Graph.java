@@ -16,13 +16,14 @@ public class Graph implements IGraph {
 	}
 	
 	/**
-	 * Constructor with nodes parameter
+	 * Constructor with node and edge lists parameters
 	 * @param listNodes
 	 */
-	public Graph(ArrayList<Node> listNodes){
+	public Graph(ArrayList<Node> listNodes, ArrayList<Edge> listEdges){
 		this.listNodes = listNodes;
-		this.listEdges = new ArrayList<Edge>();
+		this.listEdges = listEdges;
 	}
+	
 	public ArrayList<Node> getNodes() {
 		// TODO Auto-generated method stub
 		return this.listNodes;

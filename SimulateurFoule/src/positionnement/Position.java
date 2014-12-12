@@ -6,6 +6,10 @@ public class Position implements IPosition{
 	
 	private int x;
 	private int y;
+	
+	public Position() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Position(int x, int y) {
 		// TODO Auto-generated constructor stub
