@@ -50,6 +50,7 @@ public class MyStackFIFO {
 		for( int i=0;i<listElement.size()-1;i++){
 			listElement.set(i, listElement.get(i+1));
 		}
+		listElement.remove(listElement.size());
 	}
 
 	/**
