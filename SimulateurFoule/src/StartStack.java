@@ -1,6 +1,6 @@
 import positionnement.Position;
 import stack.StackElement;
-import stack.myStack;
+import stack.MyStackLIFO;
 
 
 /**
@@ -22,7 +22,7 @@ public class StartStack {
 		StackElement element5 = new StackElement(new Position(5,4), 1);
 		StackElement element6 = new StackElement(new Position(6,5), 1);
 				
-		myStack pile = new myStack();
+		MyStackLIFO pile = new MyStackLIFO();
 		System.out.println(pile.empty());
 		pile.push(element1);
 		System.out.println(pile.size());
