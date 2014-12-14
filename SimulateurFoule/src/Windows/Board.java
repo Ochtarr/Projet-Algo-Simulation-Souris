@@ -17,7 +17,7 @@ import elements.Grass;
 import elements.Ground;
 import elements.Mouse;
 import elements.Wall;
-import Map.Map;
+import map.Map;
 
 public class Board extends JPanel {
 	private ArrayList<Element> listElement = new ArrayList<Element>();
@@ -32,7 +32,7 @@ public class Board extends JPanel {
 		char[][] tabCar = mp.getMapTab();
 		tmpMap = mp;
 
-		maCarte.setBackground(Color.WHITE);
+		maCarte.setBackground(new Color(173,161,118));
 		
 		maCarte.setLayout(gridMap);
 	
@@ -50,7 +50,7 @@ public class Board extends JPanel {
 					gbc.gridx = y;
 					gbc.gridy = i;
 					JLabel lblNewLabel = new JLabel();
-					lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.mur));
+					lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.mur));
 					gridMap.setConstraints(maCarte, gbc);
 					maCarte.add(lblNewLabel, gbc);
 					int[] currPos = {i,y};
@@ -62,7 +62,7 @@ public class Board extends JPanel {
 					gbc.gridx = y;
 					gbc.gridy = i;
 					JLabel lblNewLabel = new JLabel();
-					lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.route));
+					lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.route));
 					gridMap.setConstraints(maCarte, gbc);
 					maCarte.add(lblNewLabel, gbc);
 					int[] currPos = {i,y};
@@ -75,7 +75,7 @@ public class Board extends JPanel {
 					gbc.gridx = y;
 					gbc.gridy = i;
 					JLabel lblNewLabel = new JLabel();
-					lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.herbe));
+					lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.herbe));
 					gridMap.setConstraints(maCarte, gbc);
 					maCarte.add(lblNewLabel, gbc);
 					int[] currPos = {i,y};
@@ -87,7 +87,7 @@ public class Board extends JPanel {
 					gbc.gridx = y;
 					gbc.gridy = i;
 					JLabel lblNewLabel = new JLabel();
-					lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.porte));
+					lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.porte));
 					gridMap.setConstraints(maCarte, gbc);
 					maCarte.add(lblNewLabel, gbc);
 					int[] currPos = {i,y};
@@ -99,7 +99,7 @@ public class Board extends JPanel {
 					gbc.gridx = y;
 					gbc.gridy = i;
 					JLabel lblNewLabel = new JLabel();
-					lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.fromage));
+					lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.fromage));
 					gridMap.setConstraints(maCarte, gbc);
 					maCarte.add(lblNewLabel, gbc);
 					int[] currPos = {i,y};
@@ -118,7 +118,7 @@ public class Board extends JPanel {
 		gbc.gridx = x;
 		gbc.gridy = y;
 		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setIcon(new ImageIcon(interfaces.LinuxGestionImages.souris));
+		lblNewLabel.setIcon(new ImageIcon(interfaces.GestionImages.souris));
 		gridMap.setConstraints(maCarte, gbc);
 		maCarte.add(lblNewLabel, gbc);
 		

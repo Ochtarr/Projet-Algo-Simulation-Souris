@@ -1,6 +1,6 @@
 import java.awt.EventQueue;
 
-import Map.Map;
+import map.Map;
 import Windows.WindowGameInterface;
 
 public class Start {
@@ -8,8 +8,7 @@ public class Start {
 		/**
 		 * TEST FONCTIONNEMENT MAP
 		 */
-		String fichier = "src\\ressource\\map.txt";
-		//String fichier = "src/ressource/map.txt";
+		String fichier = "Projet-Algo-Simulation-Souris\\SimulateurFoule\\src\\ressource\\map.txt";
 		System.out.println("++++ GENERATION MAP CONSOLE ++++");
 		final Map oMap = new Map(fichier);
 		System.out.println("Nombre Colonnes : " + oMap.getNbColonne());

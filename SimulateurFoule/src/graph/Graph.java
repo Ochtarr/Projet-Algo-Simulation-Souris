@@ -2,13 +2,15 @@ package graph;
 
 import interfaces.IGraph;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+
+import positionnement.Position;
 
 public class Graph implements IGraph {
 	
-	private ArrayList<Node> listNodes;
-	private ArrayList<Edge> listEdges;
-	
+	private HashMap<Position, Node> listNodes;
+	private HashMap<Position[], Edge> listEdges;
+		
 	/**
 	 * Default Constructor. Do nothing
 	 */
@@ -19,29 +21,45 @@ public class Graph implements IGraph {
 	 * Constructor with node and edge lists parameters
 	 * @param listNodes
 	 */
-	public Graph(ArrayList<Node> listNodes, ArrayList<Edge> listEdges){
+	public Graph(HashMap<Position, Node> listNodes, HashMap<Position[], Edge> listEdges){
 		this.listNodes = listNodes;
 		this.listEdges = listEdges;
 	}
 	
-	public ArrayList<Node> getNodes() {
+	public HashMap<Position, Node> getNodes() {
 		// TODO Auto-generated method stub
 		return this.listNodes;
 	}
 	
-	public ArrayList<Edge> getEdges() {
+	public HashMap<Position[], Edge> getEdges() {
 		// TODO Auto-generated method stub
 		return this.listEdges;
 	}
 
-	public void addNode(Node n) {
+	public void addNode(Position pos, Node n) {
 		// TODO Auto-generated method stub
-		this.listNodes.add(n);
+		this.listNodes.put(pos, n);
+	}
+	
+	public void addEdge(Edge edge) {
+		// TODO Auto-generated method stub
+		Position[] edgePosition = null;
+		if (edge != null)
+			edgePosition = new Position[2];
+			edgePosition[0] = edge.getSource().getPosition();
+			edgePosition[1] = edge.getDestination().getPosition();
+			this.listEdges.put(edgePosition, edge);
 	}
 
 	public void addEdge(Node n1, Node n2, int poids) {
 		// TODO Auto-generated method stub
-		this.listEdges.add(new Edge(n1, n2, poids));
+		Position[] edgePosition = null;
+		if (n1 != null && n2 != null){
+			edgePosition = new Position[2];
+			edgePosition[0] = n1.getPosition();
+			edgePosition[1] = n2.getPosition();
+			this.listEdges.put(edgePosition, new Edge(n1, n2, poids));
+		}
 	}
 
 	public int getNumberOfNodes() {
@@ -52,12 +70,6 @@ public class Graph implements IGraph {
 	public int getNumberOfEdges() {
 		// TODO Auto-generated method stub
 		return this.listEdges.size();
-	}
-
-	public void addEdge(Edge edge) {
-		// TODO Auto-generated method stub
-		if (edge != null)
-			this.listEdges.add(edge);
 	}
 	
 	public int compterPoidsTotal(Node source, Node destination){
@@ -94,5 +106,20 @@ public class Graph implements IGraph {
 		}
 		return false;
 	}
-
+	
+	public Node getLeftNode(Node n){
+		 return this.listNodes.get( new Position(n.getPosition().getX()-1,n.getPosition().getY()) );
+	}
+	
+	public Node getRightNode(Node n){
+		 return this.listNodes.get( new Position(n.getPosition().getX()+1,n.getPosition().getY()) );
+	}
+	
+	public Node getTopNode(Node n){
+		 return this.listNodes.get( new Position(n.getPosition().getX(),n.getPosition().getY()+1) );
+	}
+	
+	public Node getBottomNode(Node n){
+		 return this.listNodes.get( new Position(n.getPosition().getX(),n.getPosition().getY()-1) );
+	}
 }

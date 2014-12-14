@@ -7,8 +7,8 @@ public class Node implements INode {
 	
 	private String label;
 	private Position position;
-	private int listPosition;
 	private int poids;
+	private boolean accessible;
 	
 	/**
 	 * default constructor
@@ -16,11 +16,17 @@ public class Node implements INode {
 	public Node(){
 	}
 		
-	public Node(String label, Position position, int listPosition, int poids){
+	/**
+	 * Constructor with differents parameters
+	 * @param label
+	 * @param poids poids of node
+	 * @param accessible boolean equals true if a mouse can be placed on this node
+	 */
+	public Node(String label, Position pos, int poids, boolean accessible){
 		this.label = label;
-		this.position = position;
-		this.listPosition = listPosition;
+		this.setPosition(pos);
 		this.poids = poids;
+		this.accessible = accessible;
 	}
 	
 	/**
@@ -29,8 +35,8 @@ public class Node implements INode {
 	 */
 	public Node(Node n){
 		this.label = n.label;
-		this.position = n.position;
-		this.listPosition = n.listPosition;
+		this.poids = n.poids;
+		this.accessible = n.accessible;
 	}
 
 	public String getLabel() {
@@ -42,21 +48,6 @@ public class Node implements INode {
 		// TODO Auto-generated method stub
 		this.label = label;
 	}
-
-	/**
-	 * @return position of current element
-	 */
-	public Position getPosition() {
-		return this.position;
-	}
-
-	/**
-	 * Set position of current element
-	 * @param position
-	 */
-	public void setPosition(Position p) {
-		this.position = p;
-	}
 	
 	public boolean equals(Node n) {
 		// TODO Auto-generated method stub
@@ -66,16 +57,6 @@ public class Node implements INode {
 	
 	public String toString(){
 		return this.label;
-	}
-
-	public int getListPosition() {
-		// TODO Auto-generated method stub
-		return this.listPosition;
-	}
-	
-	public int getListPosition(Position p) {
-		// TODO Auto-generated method stub
-		return this.listPosition;
 	}
 
 	/**
@@ -90,6 +71,34 @@ public class Node implements INode {
 	 */
 	public void setPoids(int poids) {
 		this.poids = poids;
+	}
+
+	/**
+	 * @return the accessible
+	 */
+	public boolean isAccessible() {
+		return accessible;
+	}
+
+	/**
+	 * @param accessible the accessible to set
+	 */
+	public void setAccessible(boolean accessible) {
+		this.accessible = accessible;
+	}
+
+	/**
+	 * @return the position
+	 */
+	public Position getPosition() {
+		return position;
+	}
+
+	/**
+	 * @param position the position to set
+	 */
+	public void setPosition(Position position) {
+		this.position = position;
 	}
 
 }

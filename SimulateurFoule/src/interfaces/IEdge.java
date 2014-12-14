@@ -2,11 +2,13 @@ package interfaces;
 
 import graph.Node;
 
-import java.util.ArrayList;
+import positionnement.Position;
+
+import java.util.HashMap;
 
 public interface IEdge {
 	
-	public ArrayList<Node> getNodes();
+	public HashMap<Position, Node> getNodes();
 	
 	public Node getSource();
 	
