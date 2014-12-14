@@ -21,7 +21,7 @@ import javax.swing.border.EmptyBorder;
 import elements.Mouse;
 import elements.Arrival;
 import elements.Element;
-import Map.Map;
+import map.Map;
 
 public class WindowGameInterface extends JFrame implements ActionListener{
 	/*
@@ -42,7 +42,7 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 	private JTextField textField_Vitesse;
 	private JButton btn_Lancer = new JButton("LANCER");
 	private Board bd = new Board();
-	private RefreshMap refresh;
+//	private RefreshMap refresh;
 	/*
 	//Main temporaire pour tester la vue
 	public static void main(String[] args) {
@@ -65,7 +65,7 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 		setTitle("Mouse Run");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 600);
-		setBackground(Color.WHITE);
+		setBackground(new Color(255,230,153));
 		contentPane.setBorder(new EmptyBorder(50, 50, 50, 50));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		contentPane.setBackground(Color.WHITE);
