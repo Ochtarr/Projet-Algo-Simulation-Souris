@@ -7,14 +7,26 @@ public class Position implements IPosition{
 	private int x;
 	private int y;
 	
-	public Position() {
+	public Position(Position position) {
 		// TODO Auto-generated constructor stub
+		this.x = position.getX();
+		this.y = position.getY();
 	}
 
 	public Position(int x, int y) {
 		// TODO Auto-generated constructor stub
 		this.x = x;
 		this.y = y;
+	}
+
+	public Position(int[] currPosition) {
+		// TODO Auto-generated constructor stub
+		this.x = currPosition[0];
+		this.y = currPosition[1];
+	}
+
+	public Position() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getX() {
