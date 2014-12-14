@@ -42,21 +42,13 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 	private JTextField textField_Vitesse;
 	private JButton btn_Lancer = new JButton("LANCER");
 	private Board bd = new Board();
-//	private RefreshMap refresh;
-	/*
-	//Main temporaire pour tester la vue
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					WindowGameInterface frame = new WindowGameInterface(oMap);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	*/
+	private JLabel label_Info_Souris_En_Deplacement = new JLabel("0");
+	private JLabel label_Info_Souris_Arrivee = new JLabel("0");
+	private JPanel panel_infos = new JPanel();
+	private JPanel panel_score = new JPanel();
+	private JLabel label_Info_Tour = new JLabel("0");
+	private JLabel label_Info_Deplacements = new JLabel("0");
+	
 	public WindowGameInterface(){
 		
 	}
@@ -83,7 +75,7 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 	    
 	    
 		//Jpanel affichage plateau de jeu
-		panel_plateau.setBackground(Color.WHITE);
+		panel_plateau.setBackground(new Color(255,230,153));
 		contentPane.add(panel_plateau, BorderLayout.CENTER);
 		
 		// Initialisation de la map avec images
@@ -91,7 +83,6 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 		bd.initializeTileMap(mp);
 				
 		//Jpanel pour les informations
-		JPanel panel_infos = new JPanel();
 		panel_infos.setBackground(new Color(255,230,153));
 		contentPane.add(panel_infos, BorderLayout.SOUTH);
 		GridBagLayout gbl_panel_infos = new GridBagLayout();
@@ -102,7 +93,6 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 		panel_infos.setLayout(gbl_panel_infos);
 		
 			//Jpanel avec affichage des informations/scores
-			JPanel panel_score = new JPanel();
 			panel_score.setBackground(new Color(255,230,153));
 			GridBagConstraints gbc_panel_score = new GridBagConstraints();
 			gbc_panel_score.ipadx = 1;
@@ -131,7 +121,6 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 				
 				//Label pour afficher l'information sur le tour
 				//Mis � 1 de base pour test, a changer plus tard avec les donn�es dynamiques
-				JLabel label_Info_Tour = new JLabel("0");
 				label_Info_Tour.setFont(new Font("Tahoma", Font.PLAIN, 18));
 				GridBagConstraints gbc_label_Info_Tour = new GridBagConstraints();
 				gbc_label_Info_Tour.insets = new Insets(0, 0, 0, 5);
@@ -150,7 +139,6 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 				
 				//Label pour afficher l'information sur le deplacements total
 				//Mis � 30 de base pour test, a changer plus tard avec les donn�es dynamiques
-				JLabel label_Info_Deplacements = new JLabel("0");
 				label_Info_Deplacements.setFont(new Font("Tahoma", Font.PLAIN, 18));
 				GridBagConstraints gbc_label_Info_Deplacements = new GridBagConstraints();
 				gbc_label_Info_Deplacements.insets = new Insets(0, 0, 0, 5);
@@ -169,7 +157,6 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 				
 				//Label pour afficher l'information sur le nombre de souris en deplacements
 				//Mis � 4 de base pour test, a changer plus tard avec les donn�es dynamiques
-				JLabel label_Info_Souris_En_Deplacement = new JLabel("0");
 				label_Info_Souris_En_Deplacement.setFont(new Font("Tahoma", Font.PLAIN, 15));
 				GridBagConstraints gbc_label_Info_Souris_En_Deplacement = new GridBagConstraints();
 				gbc_label_Info_Souris_En_Deplacement.insets = new Insets(0, 0, 0, 5);
@@ -188,7 +175,6 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 				
 				//Label pour afficher l'information sur le nombre de souris arriv�es
 				//Mis � 2 de base pour test, a changer plus tard avec les donn�es dynamiques
-				JLabel label_Info_Souris_Arrivee = new JLabel("0");
 				label_Info_Souris_Arrivee.setFont(new Font("Tahoma", Font.PLAIN, 15));
 				GridBagConstraints gbc_label_Info_Souris_Arrivee = new GridBagConstraints();
 				gbc_label_Info_Souris_Arrivee.gridx = 10;
@@ -301,14 +287,28 @@ public class WindowGameInterface extends JFrame implements ActionListener{
 			if(!this.textField_Porte1.getText().equals("0") || !this.textField_Porte1.getText().equals("")){
 				int nbSouris = Integer.parseInt(this.textField_Porte1.getText());
 				 Mouse mouse = new Mouse();
+				 int deplacement = 0;
 				 for(int y=0;y<bd.getListElement().size();y++){
 					 	Element tmpTab = (Element) bd.getListElement().toArray()[y];
 						 if(tmpTab instanceof Arrival){
-								((Arrival) tmpTab).addMouse(mouse);
-								bd.paintSouris(mouse);
-								bd.getMaCarte().repaint();
-								contentPane.repaint();
-								setContentPane(contentPane);
+							 
+							 String nbSourisPop = textField_Porte1.getText();
+							 int Sourispop = Integer.parseInt(nbSourisPop); 
+							 for (int x = 0; x < Sourispop ; x++){
+									((Arrival) tmpTab).addMouse(mouse);
+									bd.paintSouris(mouse);
+									bd.getMaCarte().repaint();
+									label_Info_Tour = new JLabel("" + deplacement++);
+									label_Info_Tour.revalidate();
+									label_Info_Tour.repaint();
+									label_Info_Souris_En_Deplacement = new JLabel("" + deplacement++);
+									label_Info_Souris_En_Deplacement.revalidate();
+									label_Info_Souris_En_Deplacement.repaint();
+									contentPane.repaint();
+									setContentPane(contentPane);
+							 }
+							 
+
 						 }
 				 }
 			}
