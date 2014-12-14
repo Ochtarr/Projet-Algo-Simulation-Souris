@@ -10,10 +10,12 @@ import javax.imageio.ImageIO;
 
 public abstract class Element implements IElement {
 
+	private String label;
 	private int MovingCost;
 	private BufferedImage icon;
 	private int[][] tabAround = new int[8][8];
 	private int[] currPosition = {0,0};
+	private boolean accessible;
 	/* Valeur de Deplacement de la case
 	*  Exemple : 
 	*  Ground ( Terrain normaux ), valeur de deplacement = 1
@@ -70,5 +72,34 @@ public abstract class Element implements IElement {
 	public void setCurrPosition(int[] currPosition) {
 		this.currPosition = currPosition;
 	}
+
+	/**
+	 * @return the accessible
+	 */
+	public boolean isAccessible() {
+		return accessible;
+	}
+
+	/**
+	 * @param accessible the accessible to set
+	 */
+	public void setAccessible(boolean accessible) {
+		this.accessible = accessible;
+	}
+
+	/**
+	 * @return the label
+	 */
+	public String getLabel() {
+		return label;
+	}
+
+	/**
+	 * @param label the label to set
+	 */
+	public void setLabel(String label) {
+		this.label = label;
+	}
+	
 
 }

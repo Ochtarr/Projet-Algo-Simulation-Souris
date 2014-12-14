@@ -2,13 +2,15 @@ package graph;
 
 import interfaces.IEdge;
 
-import java.util.ArrayList;
+import positionnement.Position;
+
+import java.util.HashMap;
 
 public class Edge implements IEdge {
 	
 	private Node source;
 	private Node destination;
-	private ArrayList<Node> listNodes;
+	private HashMap<Position, Node> mapNodes;
 	private int poids;
 
 	/**
@@ -18,19 +20,18 @@ public class Edge implements IEdge {
 	}
 	
 	/**
-	 * Constructor with an array of nodes (size array:2)
-	 * @param listNodes
+	 * Constructor with an hashmap of nodes (capacity:2)
+	 * @param mapNodes
 	 */
-	public Edge(ArrayList<Node> listNodes) {
-		if(listNodes.size() != 2 && listNodes != null){
-			this.listNodes = new ArrayList<Node>(2);
-			listNodes.add(listNodes.get(0));
-			listNodes.add(listNodes.get(1));
-			this.source = listNodes.get(0);
-			this.destination = listNodes.get(1);
-			//Initialisation du poids avec listNodes.get(1).get...(getPoids)
+	public Edge(HashMap<Position, Node> mapNodes) {
+		if(mapNodes.size() != 2 && mapNodes != null){
+			this.source = mapNodes.get(0);
+			this.destination = mapNodes.get(1);
+			this.mapNodes = new HashMap<Position, Node>(2);
+			mapNodes.put(this.source.getPosition(), this.source);
+			mapNodes.put(this.destination.getPosition(), this.destination);
 		}
-		else if(listNodes == null)
+		else if(mapNodes == null)
 			System.out.println("Parameter must be initialized.");
 		else
 			System.out.println("Size of parameter must equal two");
@@ -45,9 +46,9 @@ public class Edge implements IEdge {
 		if(source!=null && destination!=null){
 			this.source = source;
 			this.destination = destination;
-			this.listNodes = new ArrayList<Node>(2);
-			this.listNodes.add(source);
-			this.listNodes.add(destination);
+			this.mapNodes = new HashMap<Position, Node>(2);
+			this.mapNodes.put(this.source.getPosition(), this.source);
+			this.mapNodes.put(this.destination.getPosition(), this.destination);
 			this.poids = poids;
 		}
 	}
@@ -59,15 +60,15 @@ public class Edge implements IEdge {
 	public Edge(Edge e){
 		this.source = e.source;
 		this.destination = e.destination;
-		this.listNodes = new ArrayList<Node>(2);
-		this.listNodes.add(e.getNodes().get(0));
-		this.listNodes.add(e.getNodes().get(1));
+		this.mapNodes = new HashMap<Position, Node>(2);
+		this.mapNodes.put(this.source.getPosition(), this.source);
+		this.mapNodes.put(this.destination.getPosition(), this.destination);
 	}
 
 
-	public ArrayList<Node> getNodes() {
+	public HashMap<Position, Node> getNodes() {
 		// TODO Auto-generated method stub
-		return this.listNodes;
+		return this.mapNodes;
 	}
 
 	public Node getSource() {

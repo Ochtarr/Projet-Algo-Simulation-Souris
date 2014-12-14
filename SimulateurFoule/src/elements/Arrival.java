@@ -10,6 +10,8 @@ public class Arrival extends Element {
 			
 	//  CONSTRUCTOR
 	public Arrival(){
+		this.setLabel("Arrival");
+		this.setAccessible(false);
 		this.setMovingCost(0);
 		initializeTabPos();
 	}
